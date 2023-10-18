@@ -1,8 +1,8 @@
 MIT License
 
-CLOCK-JS - Relógio Digital Mega Estiloso com Clima em Tempo Real e Backgrounds TOP
+CLOCK-JS
 
-Versão 1.0.0 - [Data]
+Versão 1.0.0 - 18/10/2023
 
 Permissão é concedida gratuitamente, a qualquer pessoa que obtenha uma cópia deste software e dos arquivos de documentação associados (o "Software"), para lidar no Software sem restrição, incluindo, sem limitação, os direitos de usar, copiar, modificar, mesclar, publicar, distribuir, sublicenciar e/ou vender cópias do Software, e permitir que as pessoas a quem o Software é fornecido o façam, sob as seguintes condições:
 
@@ -15,3 +15,22 @@ O SOFTWARE É FORNECIDO "COMO ESTÁ", SEM GARANTIA DE QUALQUER TIPO, EXPRESSA OU
 **Nota sobre a API OpenWeatherMap:**
 Este software utiliza a API OpenWeatherMap para fornecer informações meteorológicas em tempo real. Ao usar este software, você concorda em cumprir os termos e condições da API OpenWeatherMap disponíveis em [OpenWeatherMap Terms](https://openweather.co.uk/privacy-policy), . O desenvolvedor deste software não é responsável por quaisquer violações dos termos da API OpenWeatherMap.
 
+
+
+[English - automatically translated]
+MIT License
+
+CLOCK-JS
+
+Version 1.0.0 - 10/18/2023
+
+Permission is granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including, without limitation, the rights to use, copy, modify, merge, publish, distribute, sublicense and/or sell copies of the Software, and permit persons to whom the Software is provided to do so, under the following conditions:
+
+The above copyright notice and this permission notice must be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE .
+
+---
+
+**Note about OpenWeatherMap API:**
+This software uses the OpenWeatherMap API to provide real-time weather information. By using this software, you agree to comply with the OpenWeatherMap API terms and conditions available at [OpenWeatherMap Terms](https://openweather.co.uk/privacy-policy), . The developer of this software is not responsible for any violations of the OpenWeatherMap API terms.
