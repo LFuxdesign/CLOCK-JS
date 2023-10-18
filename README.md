@@ -19,6 +19,16 @@ Bem-vindo ao repositório CLOCK-JS, onde o tempo passa e a diversão nunca acaba
 
 - **API de Tempo:** Integração com as forças da natureza para trazer o clima até você.
 
+## Acesse a Aplicação:
+
+Acesse o CLOCK-JS [aqui]([https://seu-link-da-aplicacao](https://lfuxdesign.github.io/CLOCK-JS/)).
+
+## Contribuições São Bem-Vindas:
+
+Estamos abertos a contribuições e sugestões! Sinta-se à vontade para explorar o código-fonte, reportar problemas e enviar solicitações de pull. Juntos, podemos tornar este relógio digital ainda mais incrível.
+
+Agradecemos por fazer parte deste projeto!
+
 ## Como Colocar a Festa no Ar:
 
 ### Clone o Repositório:
