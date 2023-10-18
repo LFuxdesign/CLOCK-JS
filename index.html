@@ -1,1 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Use seu computador, tablet ou celular como um relógio digital intuitivo e simples. Esse é um projeto livre e open source.">
+	<meta name="author" content="Leonardo Felipe">
+	<meta name="robots" content="index, nofollow">
+	<meta name="google" content="nositelinkssearchbox">
+	<meta name="keywords" content="relogio, clock, projeto, project, opensource, open, source, tips-and-tricks, tips, tricks">
+	<meta name="rating" content="general">
+	<!--cor navegador mobile-->
+    <meta name="theme-color" content="#d5d5d5">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#d5d5d5">
+    <meta name="msapplication-navbutton-color" content="#d5d5d5">
 
+
+	<title>Projeto Clock - Leonardo Felipe</title>
+	
+
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Anek+Odia&display=swap" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+	<style>
+		*{padding:0;margin:0}h1,h2,h3,h4,h5,h6,a,span,p{color:#fff}a{text-decoration:none;background:linear-gradient(#fff,#fff);background-repeat:no-repeat;background-size:100% 2px;background-position-y:bottom;padding:2px 5px;transition:all .5s ease-in-out}a:hover{color:#212529;background-size:100% 100%;border-radius:3px}body{background:#000}.text-mark{background:#74FF66;color:#07090a;padding:4px;border-radius:3px;font-weight:700;text-decoration:none}#background{height:100vh;width:100vw;display:flex;align-items:center;justify-content:center;background-repeat:no-repeat;background-position:center;background-size:cover}#clock{display:flex;flex-direction:column;background:#00000050;padding:20px;border-radius:5px;backdrop-filter:blur(1px);box-shadow:0 0 20px #00000040}#hora,#minutos{padding:20px;display:flex;align-items:center;justify-content:center;flex-direction:row;margin:20px;border-radius:8px}#clock p{font-family:'Roboto Condensed',arial,sans-serif;letter-spacing:2px;color:#fff;font-size:2rem;margin-left:50%;margin-top:10px}#clima{position:fixed;top:2vh;right:3vw;z-index:999;display:none}#clima p{color:#fff;font-family:'Anek Odia',sans-serif;font-size:1.8rem;background:#00000060;padding:10px 10px 1px 10px;border-radius:5px;backdrop-filter:blur(2px);box-shadow:0 0 20px #00000040}#clock span{color:#fff;font-size:7.9rem;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Roboto Condensed',arial,sans-serif;letter-spacing:2px}#turnonloc{position:fixed;overflow:hidden;background:#f9f9f945;backdrop-filter:blur(33px);padding:10%;max-height:calc(90vh - 20%);width:calc(90vw - 20%);max-width:700px;border-radius:10px;transition:all .5s ease-in-out;z-index:9999;display:none;opacity:0}#turnonloc div::-webkit-scrollbar{background:#ffffff20;border-radius:10px;width:10px}#turnonloc div::-webkit-scrollbar-thumb{background:#21252930;border-radius:10px}#turnonloc div::-webkit-scrollbar-thumb:active{background:#21252980;border-radius:10px}#turnonloc div h3{font-family:sans-serif,system-ui;font-size:2rem}#turnonloc div p{font-family:sans-serif,system-ui;font-size:.99rem;text-align:justify;letter-spacing:.9px;line-height:1.5;margin-top:20px}#turnonloc div button{position:absolute;color:#fff;font-weight:700;bottom:0;left:0;height:50px;width:100%;background:#ffffff30;border:none;box-shadow:0 0 20px #00000040;cursor:pointer;transition:all .5s ease-in-out}#turnonloc div button:hover{background:#fff;color:#212529}svg#seta{position:absolute;right:3%;bottom:60px}svg.circle{position:absolute;transform:rotate(45deg);z-index:-1;filter:blur(29px)}svg.circle1{top:-50%;left:-20%}svg.circle2{bottom:-50%;right:-20%}svg.dot1{top:-6%;right:-5%}svg.dot2{bottom:-6%;left:13%;filter:blur(65px)}#line,#triangulo{transition:all 1s cubic-bezier(1,-.06,0,.88)}#line{stroke-dasharray:470;stroke-dashoffset:470}#triangulo{opacity:0}#spanimg{position:fixed;bottom:1vh;right:1vw;font-family:sans-serif,system-ui;padding:11px;background:#00000070;border-radius:3px;backdrop-filter:blur(3px)}@media(max-width:1020px){svg#seta{display:none}}@media(max-width:610px){svg#seta{display:none}}@media(max-width:500px){#turnonloc div{max-height:calc(65vh - 50px);overflow-y:scroll;padding-bottom:10vh;padding-right:20px}#turnonloc{height:calc(92vh - 20%)!important;max-height:none}}@media(max-width:400px){#clock span{font-size:5.9rem}#clock p{font-size:1.4rem}}@media(max-height:524px){#turnonloc div{max-height:calc(60vh - 50px);overflow-y:scroll;padding-right:20px}svg#seta{display:none}#spanimg,#clima div p{background:none;backdrop-filter:none}#spanimg,#clima div p{box-shadow:none}}
+	</style>
+</head>
+<body>
+	<section id="main">
+		<div id="clima">
+			<div>
+				<p>88°C</p>
+			</div>
+		</div>
+		<div id="background">
+			<span id="spanimg"></span>
+			<div id="turnonloc">
+				<div>
+					<h3>Você pode permitir o uso de sua localização para melhorar sua experiência no site!</h3>
+					<p data-nosnippet>Sua localização permite que você veja dados sobre o clima exato da sua região por meio da API do <a href="https://openweathermap.org/" data-nosnippet>openweathermap</a>.</p> <p data-nosnippet>Com isso você consegue ver a temperatura e a descrição do clima local com precisão, mas olha, isso é opicional ta, <u class="text-mark">você decide!</u></p>
+					<p data-nosnippet>O openweathermap utiliza cookies e você pode ver sobre eles aqui: <a href="https://openweathermap.org/cookies-details">openweatermap.org/cookies-details</a></p>
+					<button>OK</button>
+
+					<svg class="circle dot1" width="100" viewBox="0 0 500 443" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<circle cx="250" cy="233" r="210" fill="#4EB1AB"/>
+						<mask id="mask0_8_17" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="500" height="273">
+							<rect width="500" height="273" fill="#C4C4C4"/>
+						</mask>
+						<g mask="url(#mask0_8_17)">
+							<circle cx="250" cy="233" r="210" fill="#4C4CC9"/>
+						</g>
+					</svg>
+					<svg class="circle dot2" width="200" viewBox="0 0 500 443" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<circle cx="250" cy="233" r="210" fill="#4EB1AB"/>
+						<mask id="mask0_8_17" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="500" height="273">
+							<rect width="500" height="273" fill="#C4C4C4"/>
+						</mask>
+						<g mask="url(#mask0_8_17)">
+							<circle cx="250" cy="233" r="210" fill="#4C4CC9"/>
+						</g>
+					</svg>
+
+					<svg class="circle circle1" width="500" height="465" viewBox="0 0 500 465" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<circle cx="250" cy="233" r="210" stroke="#4EB1AB" stroke-width="44"/>
+						<mask id="mask0_8_15" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="500" height="273">
+							<rect width="500" height="273" fill="#C4C4C4"/>
+						</mask>
+						<g mask="url(#mask0_8_15)">
+							<circle cx="250" cy="233" r="210" stroke="#4C4CC9" stroke-width="44"/>
+						</g>
+					</svg>
+					<svg class="circle circle2" width="500" height="465" viewBox="0 0 500 465" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<circle cx="250" cy="233" r="210" stroke="#4EB1AB" stroke-width="44"/>
+						<mask id="mask0_8_15" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="500" height="273">
+							<rect width="500" height="273" fill="#C4C4C4"/>
+						</mask>
+						<g mask="url(#mask0_8_15)">
+							<circle cx="250" cy="233" r="210" stroke="#4C4CC9" stroke-width="44"/>
+						</g>
+					</svg>
+
+					<svg id="seta" height="300" viewBox="0 0 117 422" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path id="line" d="M15.8621 2C90.6739 67.9945 195.41 241.283 15.8621 406.483" stroke="#fff" stroke-width="3"/>
+						<path id="triangulo" d="M5.74894 413.953L14.247 395.567L24.2044 408.799L5.74894 413.953Z" fill="#fff"/>
+					</svg>
+
+
+				</div>
+			</div>
+			<div id="clock">
+				<span data-nosnippet></span>
+				<p data-nosnippet></p>
+			</div>
+		</div>
+	</section>
+	<script>window.onLoad=update();bgimage();$("#turnonloc button").click(function(){clima();$("#turnonloc").fadeOut("slow")});navigator.permissions.query({name:"geolocation"}).then(function(c){if("prompt"===c.state)setTimeout(function(){$("#turnonloc").fadeIn(function(){$("#turnonloc").css("opacity","1");$("#line").css("stroke-dashoffset","0");setTimeout(function(){$("#triangulo").css("opacity","1")},350)})},2E3);else return clima()});
+function update(){setTimeout(function(){$(".disclaimer").remove()},15);horario=new Date;hh=horario.getHours();min=horario.getMinutes();dd=horario.getDate();mm=horario.getMonth();yy=horario.getFullYear();"0"==hh?hh="00":"1"==hh?hh="01":"2"==hh?hh="02":"3"==hh?hh="03":"4"==hh?hh="04":"5"==hh?hh="05":"6"==hh?hh="06":"7"==hh?hh="07":"8"==hh?hh="08":"9"==hh&&(hh="09");"0"==min?min="00":"1"==min?min="01":"2"==min?min="02":"3"==min?min="03":"4"==min?min="04":"5"==min?min="05":"6"==min?min="06":"7"==min?
+min="07":"8"==min?min="08":"9"==min&&(min="09");"1"==dd?dd="01":"2"==dd?dd="02":"3"==dd?dd="03":"4"==dd?dd="04":"5"==dd?dd="05":"6"==dd?dd="06":"7"==dd?dd="07":"8"==dd?dd="08":"9"==dd&&(dd="09");"0"==mm?mm="01":"1"==mm?mm="02":"2"==mm?mm="03":"3"==mm?mm="04":"4"==mm?mm="05":"5"==mm?mm="06":"6"==mm?mm="07":"7"==mm?mm="08":"8"==mm?mm="09":"9"==mm&&(mm="10");datebr=dd+"/"+mm+"/"+yy;dateen=mm+"/"+dd+"/"+yy;horabr=hh+" : "+min;horaen=horario.toLocaleTimeString("en-US");"pt-BR"==navigator.language?($("#clock span").text(horabr),
+$("#clock p").text(datebr)):($("#clock span").text(horaen),$("#clock p").text(dateen))}
+function clima(){var c=navigator.geolocation.getCurrentPosition(function(b){b=b.coords;"pt-BR"==navigator.language?fetch("https://api.openweathermap.org/data/2.5/weather?lat="+b.latitude+"&lon="+b.longitude+"&units=metric&appid=9a558fa04f98a56f12213a474aa10440").then(function(a){return a.json()}).then(function(a){$("#clima").fadeIn("slow");10>=a.clouds.all?$("#clima div p").text(Math.trunc(a.main.temp)+"\u00b0C | C\u00e9u Limpo"):20>=a.clouds.all?$("#clima div p").text(Math.trunc(a.main.temp)+"\u00b0C | Poucas Nuvens"):
+80>a.clouds.all?$("#clima div p").text(Math.trunc(a.main.temp)+"\u00b0C | Pred. Nublado"):80<=a.clouds.all?$("#clima div p").text(Math.trunc(a.main.temp)+"\u00b0C | Nublado"):$("#clima div p").text(Math.trunc(a.main.temp)+"\u00b0C")}):fetch("https://api.openweathermap.org/data/2.5/weather?lat="+b.latitude+"&lon="+b.longitude+"&units=imperial&appid=9a558fa04f98a56f12213a474aa10440").then(function(a){return a.json()}).then(function(a){$("#clima").fadeIn("slow");$("#clima div p").text(Math.trunc(a.main.temp)+
+"\u00b0F "+a.weather["0"].description)})},function(b){$("#temp").css("display","none")},{enableHighAccuracy:!0,timeout:5E3,maximumAge:0});setTimeout(function(){navigator.geolocation.clearWatch(c)},2E3)}setInterval(function(){update()},1E3);setInterval(function(){navigator.permissions.query({name:"geolocation"}).then(function(c){})},12E5);
+function bgimage(){var c=Math.trunc(3*Math.random());0==c&&(c=1);fetch("https://pixabay.com/api/?key=20365251-ae4b5a302bb5ec08b7a72b31b&q="+encodeURIComponent("nature")+"&editors_choice=true&safesearch=true&per_page=200&image_type=photo&page="+c).then(function(b){return b.json()}).then(function(b){console.log(b);var a=Math.trunc(199*Math.random()),d=b.hits[a].largeImageURL,e='Imagem de <a href="'+b.hits[a].pageURL+'">'+b.hits[a].user+'</a> dispon\u00edvel no <a href="https://pixabay.com">Pixabay</a>';
+b='Image from <a href="'+b.hits[a].pageURL+'">'+b.hits[a].user+'</a> available on <a href="https://pixabay.com">Pixabay</a>';"pt-BR"==navigator.language?$("#spanimg").html(e):$("#spanimg").html(b);$("#background").css("background-image","url("+d+")")})}setInterval(function(){bgimage()},36E5);</script>
+</body>
+</html>
