@@ -21,7 +21,7 @@ Bem-vindo ao repositório CLOCK-JS, onde o tempo passa e a diversão nunca acaba
 
 ## Acesse a Aplicação:
 
-Acesse o CLOCK-JS [aqui]([https://seu-link-da-aplicacao](https://lfuxdesign.github.io/CLOCK-JS/)).
+Acesse o CLOCK-JS [Aqui](https://www.lfuxdesign.github.io/CLOCK-JS/ "CLOCK-JS").
 
 ## Contribuições São Bem-Vindas:
 
